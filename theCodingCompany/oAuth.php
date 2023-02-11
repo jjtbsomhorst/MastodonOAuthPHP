@@ -155,6 +155,13 @@ trait oAuth
         return false;
     }
 
+    public function setAccessToken(string $accessToken)
+    {
+        if (is_array($this->credentials)) {
+            $this->credentials['bearer'] = $accessToken;
+        }
+    }
+
     /**
      * Get access token
      * @param string $auth_code
