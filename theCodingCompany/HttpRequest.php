@@ -128,7 +128,7 @@ final class HttpRequest
         );
         
         //Check if we have parameters to post
-        if (count($parameters) > 0 && is_array($parameters)) {
+        if (is_array($parameters) && count($parameters) > 0) {
             $content = "";
             foreach($parameters as $k => $v) {
                 $content .= "&".urlencode($k)."=" . urlencode($v);
